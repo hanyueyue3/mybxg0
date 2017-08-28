@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script type="text/javascript">
+  /*
+  js操作cookie
+  设置bookie，可以执行多次添加多个cookie
+  document.cookie = 'username=lisi';
+  获取cookie
+  document.cookie
+
+  cookie的分类：
+  1、会话cookie ，只存在于内存中
+  2、持久cookie ，会保存到浏览器指定的文件里
+
+  cookie的路径path，在父路径设置的cookie，在子路径下可以访问，但是反之不可以
+  cookie不可以跨域获取
+
+  */
+  // document.cookie = 'username=lisi';
+  // document.cookie = 'age=12';
+  // document.cookie = 'gender=male';
+  var date = new Date();
+  date.setDate(date.getDate() + 3);
+  // console.log(date.getDate());
+  // console.log(date.toGMTString());
+
+  document.cookie = 'hello=nihao; expires=' + date.toGMTString() + '; path=/'
+
+  // username=lisi; age=12; gender=male
+  // console.log(document.cookie);
+
+  // 设置cookie
+  function setCookie(key,value,options){
+     var str = key + '=' + value + '; ';
+     for(key in options){
+       str += key + '=' + options[key] + '; ';
+     }
+     if(str){
+       str = str.substring(0,str.length - 2);
+     }
+     document.cookie = str;
+  }
+  setCookie('age','12',{
+    // expires : date.toGMTString(),
+    // path : '/'
+  })
+
+
+  // 获取cookie
+  // function getCookie(key){
+  //   var allcookie = document.cookie;
+  //   var returnValue = null;
+  //   if(allcookie){
+  //     var kvs = allcookie.split('; ');
+  //     kvs.forEach(function(item){
+  //       var kv = item.split('=');
+  //       if(key == kv[0]){
+  //         returnValue = kv[1];
+  //         return false;// 终止forEach循环
+  //       }
+  //     });
+  //     return returnValue;
+  //   }
+  // }
+  // var ret = getCookie('gender');
+  // console.log(ret);
+
+  </script>
+</head>
+<body>
+  <div>cookie</div>
+</body>
+</html>
