@@ -1,6 +1,6 @@
 <?php
 $dir ='main';
-$filename='index';
+$filename='login';
 if(array_key_exists('PATH_INFO',$_SERVER)){
 	$path=$_SERVER['PATH_INFO'];
 	$str=substr($path,1);
