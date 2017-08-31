@@ -9,7 +9,7 @@ define(['jquery','template','cookie'],function($,template){
 
     // 实现退出功能
     $('#logoutBtn').click(function(){
-        console.log(123);
+        // console.log(123);
         $.ajax({
             type:'post',
             url:'/api/logout',
@@ -24,17 +24,18 @@ define(['jquery','template','cookie'],function($,template){
     });
 
     //验证是否登录
+    //$.cookie('loginInfo',JSON.stringify(data.result),{path:'/'});
     var seesionId = $.cookie('PHPSESSID');
-    console.log(seesionId);
+    // console.log(seesionId);
     if(!seesionId && location.pathname!='/main/login'){
         location.href='/main/login';
     }
 
     //获取用户登陆信息，并填充页面
     var cookie = $.cookie('loginInfo');
-    console.log(cookie);
+    // console.log(cookie);
     var loginInfo = cookie?JSON.parse(cookie):{};
-    console.log(loginInfo);
+    // console.log(loginInfo);
     // var loginInfo=JSON.parse($.cookie('loginInfo'));
     // $('.profile img').attr('src',loginInfo.tc_avatar);
     // $('.profile h4').html(loginInfo.tc_name);
