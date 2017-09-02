@@ -7,7 +7,10 @@ require.config({
   	bootstrap:'bootstrap/js/bootstrap.min',
   	common : '../js/common',
   	login : '../js/login',
-  	teacherlist:'../js/teacher-list'
+  	teacherlist:'../js/teacher-list',
+  	teacheradd:'../js/teacher-add',
+  	util:'../js/util',
+  	index:'../js/index'
   },
   shim:{// 把非标准模块转化为标准模块
   	bootstrap:{

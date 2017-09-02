@@ -1,4 +1,8 @@
-define(['jquery','template','bootstrap'],function($,template){
+define(['jquery','template','util','bootstrap'],function($,template,util){
+	//设置导航菜单选中
+	util.setMenu(location.pathname);
+	util.qs('abc');
+	
 	$.ajax({
 		//调接口，拿数据，渲染页面
 		type:'get',
