@@ -1,6 +1,6 @@
-define(['jquery','template','cookie'],function($,template){
-    // NProgress.start();
-    // NProgress.done();
+define(['jquery','template','nprogress','cookie'],function($,template,NProgress){
+    NProgress.start();
+    NProgress.done();
     
     // 实现左侧菜单的折叠展开
     $('.navs ul').prev('a').on('click', function () {

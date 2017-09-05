@@ -1,4 +1,4 @@
-define(['jquery','template','util','ckeditor','datepicker','language','uploadify','region','validate','form'],function($,template,util,CK){
+define(['jquery','template','util','ckeditor','datepicker','language','uploadify','region','validate','form','status'],function($,template,util,CK){
 	//菜单栏选中
 	util.setMenu('/main/index');
 	//调用后台接口获取所有的个人信息
@@ -37,6 +37,7 @@ define(['jquery','template','util','ckeditor','datepicker','language','uploadify
         swf : '/public/assets/uploadify/uploadify.swf',
         uploader : '/api/uploader/avatar',
         onUploadSuccess : function(f,data){
+            console.log(data);
           var data = JSON.parse(data);
           // 修改图片的URL地址
           $('.preview img').attr('src',data.result.path);

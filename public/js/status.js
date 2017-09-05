@@ -1,0 +1,12 @@
+define(['jquery'],function($){
+	//监控ajax状态
+	$(document).ajaxStart(function(){
+		$('.overlay').show();
+	});
+	//ajax请求结束
+	$(document).ajaxStop(function(){
+		setTimeout(function(){
+			$('.overlay').hide();
+		},100)	
+	});	
+});

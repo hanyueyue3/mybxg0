@@ -12,13 +12,15 @@ require.config({
   	uploadify:'uploadify/jquery.uploadify.min',
     region:'jquery-region/jquery.region',
     ckeditor:'ckeditor/ckeditor',
+    nprogress:'nprogress/nprogress',
   	common : '../js/common',
   	login : '../js/login',
   	teacherlist:'../js/teacher-list',
   	teacheradd:'../js/teacher-add',
   	util:'../js/util',
   	index:'../js/index',
-  	settings:'../js/settings'
+  	settings:'../js/settings',
+    status:'../js/status'
   },
   shim:{// 把非标准模块转化为标准模块
   	bootstrap:{
